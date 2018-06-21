@@ -1,0 +1,30 @@
+#ifndef	__FILE_HELPER_H
+#define __FILE_HELPER_H
+////////////////////////////////////////////////////////////////////////////////
+#include "headers.h"
+////////////////////////////////////////////////////////////////////////////////
+#define DEV_FILE_NAME		"dev_file"
+#define USER_FILE_NAME		"user_file"
+#define BOOK_FILE_NAME		"book_file"
+#define ADMIN_FILE_NAME		"admin_file"
+#define OFFLINE_FILE_NAME	"offline_file"
+#define MODULE_FILE_NAME   "module_file"
+#define MODULESN_FILE_NAME   "moduleSN_file"
+#define ERROR_FILE_NAME	"error_file"
+////////////////////////////////////////////////////////////////////////////////
+s16 readFile(char* fileName, u8 *buf, u16 len);
+s16 writeFile(char* fileName, u8 *buf, u16 len);
+s16 appendFile(char* fileName, u8 *buf, u16 len);
+s16 truncateFile(char* fileName);
+////////////////////////////////////////////////////////////////////////////////
+s16 saveDevInfo(void);
+s16 readDevInfo(void);
+////////////////////////////////////////////////////////////////////////////////
+u16 updateOfflineFile(OfflineInfo *info);
+u8 updateModuleInfo(ModuleInfo *info);
+u16 updateErrorInfoFile(ErrorInfo*info);
+s16 saveModuleSN(void);
+s16 readModuleSN(void);
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+#endif /* __FILE_HELPER_H */
